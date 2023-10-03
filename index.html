@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Happy BirthDay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<style>
+
+#name {
+    position: relative;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: xx-large;
+    overflow: hidden; /* Hide overflow to prevent gradient from leaking */
+}
+#myname {
+    position: relative;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: xx-large;
+    overflow: hidden; /* Hide overflow to prevent gradient from leaking */
+}
+
+#name h1 {
+    background-color: black;
+    font-size: 28px;
+    border-radius: 9px;
+    text-shadow: 0 0 black;
+    color: white; /* Make the text transparent */
+    text-align: center; /* Center the text within the container */
+    margin: 4px; /* Remove default margin to prevent spacing */
+    position: relative;
+    padding: 3px 84px;
+    z-index: 2; /* Place text above gradient */
+}
+#myname h1 {
+    background-color: black;
+    font-size: 28px;
+    border-radius: 9px;
+    text-shadow: 0 0 black;
+    color: white; /* Make the text transparent */
+    text-align: center; /* Center the text within the container */
+    margin: 4px; /* Remove default margin to prevent spacing */
+    position: relative;
+    padding: 3px 84px;
+    z-index: 2; /* Place text above gradient */
+}
+
+
+#myname::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place gradient below text */
+    background: linear-gradient(45deg, white, yellow, rgb(255, 0, 0), black, rgb(145, 255, 0), black, blue, pink, aqua, rgb(3, 255, 32), purple, rgb(170, 0, 255), black, rgb(186, 52, 52), rgb(90, 123, 255), blue, rgb(0, 0, 134), black);
+    background-size: 400%;
+    animation: anime 20s linear infinite;
+}
+#name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place gradient below text */
+    background: linear-gradient(45deg, white, yellow, rgb(255, 0, 0), black, rgb(145, 255, 0), black, blue, pink, aqua, rgb(3, 255, 32), purple, rgb(170, 0, 255), black, rgb(186, 52, 52), rgb(90, 123, 255), blue, rgb(0, 0, 134), black);
+    background-size: 400%;
+    animation: anime 20s linear infinite;
+}
+#img{
+    position: relative;
+}
+#img img{
+  width: 98%;
+}
+#img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+   width: calc(100%);
+    height: calc(100% + 4px);
+    z-index: -1; /* Place gradient below text */
+    background: linear-gradient(45deg, white, yellow, rgb(255, 0, 0), black, rgb(145, 255, 0), black, blue, pink, aqua, rgb(3, 255, 32), purple, rgb(170, 0, 255), black, rgb(186, 52, 52), rgb(90, 123, 255), blue, rgb(0, 0, 134), black);
+    background-size: 400%;
+    animation: anime 20s linear infinite;
+}
+#happy{
+    display: none;
+}
+#btn{
+font-size: 35px;
+}
+@keyframes anime {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+</style>
+<body>
+    <div class="w-100 d-flex flex-column align-items-center">
+<div id="happy" >
+
+    <div id="name" class="w-100 d-flex justify-content-center"  style="" ><h1>Happy Birthday</h1></div>
+    <div id="img" class="d-flex justify-content-center">
+        <img src="WhatsApp Image 2023-08-25 at 17.44.27 2.jpg" class="" alt="">
+    </div>
+    <div id="myname" class="w-100 d-flex justify-content-center" style="">
+        <h1>Shiwanshi</h1>
+    </div>
+    
+</div>
+        <div>
+
+            <button id="btn" class="btn btn-danger my-2"> Click me </button>
+        </div>
+    </div>
+    <script>
+let audioElement = new Audio('happy birthday.mp3')
+
+let btn=document.getElementById('btn')
+btn.addEventListener('click',()=>{
+    document.getElementById('happy').style.display='block'
+     audioElement.play();
+
+
+})
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
